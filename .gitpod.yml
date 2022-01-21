@@ -1,0 +1,9 @@
+github:
+  prebuilds:
+    pullRequestsFromForks: true
+    addComment: true
+
+image:
+  file: .gitpod.Dockerfile
+tasks:
+  - init: ${GITPOD_REPO_ROOT}/init.sh
