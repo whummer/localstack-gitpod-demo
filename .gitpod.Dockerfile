@@ -14,8 +14,12 @@ RUN pip install localstack awscli awscli-local
 # RUN apt-get update
 # RUN apt-get install docker-ce-cli
 
+# install Docker CLI
 RUN wget -O /tmp/docker-ce-cli.deb https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-ce-cli_20.10.12~3-0~debian-bullseye_amd64.deb
 RUN dpkg -i /tmp/docker-ce-cli.deb
+
+# add scripts
+ADD start.sh /usr/local/bin/start-localstack
 
 # configure sudo access for gitpod user
 RUN apt-get update
