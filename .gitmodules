@@ -1,0 +1,6 @@
+[submodule "localstack"]
+	path = localstack
+	url = https://github.com/localstack/localstack.git
+[submodule "localstack-demo"]
+	path = localstack-demo
+	url = https://github.com/localstack/localstack-demo.git

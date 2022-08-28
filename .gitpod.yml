@@ -6,4 +6,4 @@ github:
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: ${GITPOD_REPO_ROOT}/init.sh
+  - init: ${GITPOD_REPO_ROOT}/bin/init.sh
