@@ -4,7 +4,7 @@ image:
 tasks:
   - name: Initialise
     init: |
-      bash ${GITPOD_REPO_ROOT}/bin/init.sh > /tmp/init.log 2>&1
+      ${GITPOD_REPO_ROOT}/bin/init.sh
       gp sync-done init
 
   - name: Start
