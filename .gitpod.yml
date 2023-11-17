@@ -7,14 +7,21 @@ tasks:
       bash ${GITPOD_REPO_ROOT}/bin/init.sh > /tmp/init.log 2>&1
       gp sync-done init
 
-  - name: Run
+  - name: Start
     init: gp sync-await init
-    command: bash ${GITPOD_REPO_ROOT}/bin/start.sh
+    command: |
+      ${GITPOD_REPO_ROOT}/bin/start.sh
+      gp sync-done start
+
+  - name: Run
+    init: gp sync-await start
+    command: |
+      gp preview --external $(gp url 4566)/archive-bucket/index.html
 
 ports:
   - name: Web App
     description: The main application web server
-    port: 3000
+    port: 4566
     onOpen: open-browser
   - port: 4526-4559
     onOpen: ignore
